@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_pool_manager : MonoBehaviour
+public class PoolManager : MonoBehaviour
 {
     public GameObject[] gameObjects;
 
