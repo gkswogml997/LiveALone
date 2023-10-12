@@ -1,0 +1,46 @@
+{
+    "gems" : [
+        {
+            "gemId" : 0,
+            "nameColor" : "gray",
+            "textName" : "깨진 보석",
+            "textDesc" : "깨진 보석이다."
+        },
+        {
+            "gemId" : 1,
+            "nameColor" : "gray",
+            "textName" : "빛을 잃은 보석",
+            "textDesc" : "빛을 잃어버린 보석이다."
+        },
+        {
+            "gemId" : 2,
+            "nameColor" : "gray",
+            "textName" : "가공되지 않은 보석",
+            "textDesc" : "가공 되지 않은 보석이다."
+        },
+        {
+            "gemId" : 3,
+            "nameColor" : "white",
+            "textName" : "평범한 보석",
+            "textDesc" : "평범한 보석이다."
+        },
+        {
+            "gemId" : 4,
+            "nameColor" : "white",
+            "textName" : "세공된 보석",
+            "textDesc" : "세공된 보석이다."
+        },
+        {
+            "gemId" : 5,
+            "nameColor" : "white",
+            "textName" : "광택이 있는 보석",
+            "textDesc" : "살짝 광택이 보이는 보석이다."
+        },
+        {
+            "gemId" : 6,
+            "nameColor" : "red",
+            "textName" : "최상급 에텔라이트",
+            "textDesc" : "최상급 에텔라이트이다, 무기를 강화하는데 사용된다."
+        }
+    ]
+    }

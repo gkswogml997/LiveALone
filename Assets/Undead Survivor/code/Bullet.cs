@@ -15,28 +15,38 @@ public class Bullet : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    public void Init(float damage, int per, Vector3 dir)
+    public void Init(float damage, int per, Vector2 dir)
     {
         this.damage = damage;
         this.per = per;
 
-        if (per != -1)
+        if (per >= 0)
         {
-            rigidbody.velocity = dir * 15;
+            rigidbody.velocity = dir * 30;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //exception!
-        if (!collision.CompareTag("Enemy") || per == -1) { return; }
+        if (!collision.CompareTag("Enemy") || per == -100) { return; }
         
         //act
         per--;
-        if (per == 0)
+        if (per < 0)
         {
             rigidbody.velocity = Vector2.zero;
             gameObject.SetActive(false);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        //exception!
+        if (!collision.CompareTag("Area") || per == -100) { return; }
+
+        //act
+        gameObject.SetActive(false);
+
     }
 }

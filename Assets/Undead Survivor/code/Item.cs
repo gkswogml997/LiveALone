@@ -9,10 +9,11 @@ public class Item : MonoBehaviour
     public ItemData data;
     public int level;
     public Weapon weapon;
-    public Gear gear;
 
     Image icon;
     Text textLevel;
+    Text textName;
+    Text textDesc;
 
     private void Awake()
     {
@@ -21,12 +22,27 @@ public class Item : MonoBehaviour
 
         Text[] texts = GetComponentsInChildren<Text>();
         textLevel = texts[0];
+        textName = texts[1];
+        textDesc = texts[2];
+        textName.text = data.itemName;
     }
 
-    private void LateUpdate()
+    public void UpToDateInfo()
     {
         textLevel.text = "Lv. " + (level + 1);
+        switch (data.itemType)
+        {
+            case ItemData.ItemType.Melee:
+            case ItemData.ItemType.Range:
+                textDesc.text = string.Format(data.itemDesc, data.damages[level] * 100, data.counts[level]);
+                break;
+            case ItemData.ItemType.Heal:
+                textDesc.text = string.Format(data.itemDesc);
+                break;
+        }
+        
     }
+
 
     public void OnClick()
     {
@@ -38,7 +54,6 @@ public class Item : MonoBehaviour
                 {
                     GameObject newWeapon = new GameObject();
                     weapon = newWeapon.AddComponent<Weapon>();
-                    weapon.Init(data);
                 }
                 else
                 {
@@ -48,27 +63,11 @@ public class Item : MonoBehaviour
                     nextDamage += data.baseDamage * data.damages[level];
                     nextCount += data.counts[level];
 
-                    weapon.LevelUp(nextDamage, nextCount);
-                }
-                level++;
-                break;
-            case ItemData.ItemType.Glove:
-            case ItemData.ItemType.Shoe:
-                if (level == 0)
-                {
-                    GameObject newGear = new GameObject();
-                    gear = newGear.AddComponent<Gear>();
-                    gear.Init(data);
-                }
-                else
-                {
-                    float nextRate = data.damages[level];
-                    gear.LevelUp(nextRate);
                 }
                 level++;
                 break;
             case ItemData.ItemType.Heal:
-                GameManager.instance.hp = GameManager.instance.max_hp;
+                GameManager.instance.player.hp = GameManager.instance.player.max_hp;
                 break;
         }
         
@@ -77,5 +76,7 @@ public class Item : MonoBehaviour
         {
             GetComponent<Button>().interactable = false;
         }
+
+        UpToDateInfo();
     }
 }

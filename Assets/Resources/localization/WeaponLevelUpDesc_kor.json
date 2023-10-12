@@ -1,0 +1,21 @@
+{
+    "pistol" :[
+        {
+            "weaponName" : "피스톨",
+            "weaponDesc" : "기본적인 권총이다.",
+            "damage" : "공격 계수 {0} 증가",
+            "speed" : "공격딜레이 {0} 감소"
+        }
+    ],
+    "ak47" :[
+        {
+            "weaponName" : "돌격소총",
+            "weaponDesc" : "돌격소총이다.",
+            "damage" : "공격 계수 {0} 증가",
+            "per" : "관통력 {0} 증가",
+            "speed" : "공격딜레이 {0} 감소",
+            "fireRate" : "점사 간격 {0} 감소",
+            "fireCount" : "발사횟수 {0} 증가"
+        }
+    ]
+    }

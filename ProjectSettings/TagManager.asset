@@ -8,6 +8,10 @@ TagManager:
   - Area
   - Enemy
   - Bullet
+  - ItemName
+  - Item
+  - GoldArea
+  - BackgroundProps
   layers:
   - Default
   - TransparentFX

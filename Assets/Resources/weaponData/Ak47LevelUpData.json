@@ -1,0 +1,44 @@
+{
+    "levelDatas" : [
+        {
+            "level" : 1,
+            "damageRise" : 3,
+            "perRise" : 1,
+            "speedRise" : 2,
+            "fireRateRise" : 0.2,
+            "fireCountRise" : 2
+        },
+        {
+            "level" : 2,
+            "damageRise" : 0,
+            "perRise" : 1,
+            "speedRise" : 0.5,
+            "fireRateRise" : 0,
+            "fireCountRise" : 0
+        },
+        {
+            "level" : 3,
+            "damageRise" : 0,
+            "perRise" : 0,
+            "speedRise" : 0.5,
+            "fireRateRise" : 0.05,
+            "fireCountRise" : 1
+        },
+        {
+            "level" : 4,
+            "damageRise" : 0,
+            "perRise" : 0,
+            "speedRise" : 0.5,
+            "fireRateRise" : 0,
+            "fireCountRise" : 1
+        },
+        {
+            "level" : 5,
+            "damageRise" : 1,
+            "perRise" : 1,
+            "speedRise" : 0,
+            "fireRateRise" : 0.05,
+            "fireCountRise" : 1
+        }
+    ]
+    }

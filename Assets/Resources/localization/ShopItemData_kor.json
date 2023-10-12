@@ -1,0 +1,59 @@
+{
+    "items" : [
+        {
+            "itemId" : 0,
+            "textName" : "체력 강화",
+            "textDesc" : "최대 체력을 {0} 상승시킨다."
+        },
+        {
+            "itemId" : 1,
+            "textName" : "근육 강화",
+            "textDesc" : "공격력을 {0} 상승시킨다."
+        },
+        {
+            "itemId" : 2,
+            "textName" : "재생 혈청",
+            "textDesc" : "체력 재생을 {0} 상승시킨다."
+        },
+        {
+            "itemId" : 3,
+            "textName" : "피부 경화",
+            "textDesc" : "방어력을 {0} 상승시킨다."
+        },
+        {
+            "itemId" : 4,
+            "textName" : "끝없는 욕심",
+            "textDesc" : "골드 획득 비율을 {0}% 상승시킨다."
+        },
+        {
+            "itemId" : 5,
+            "textName" : "끝없는 탐욕",
+            "textDesc" : "보석 드랍률을 {0}% 상승시킨다."
+        },
+        {
+            "itemId" : 6,
+            "textName" : "퀵 드로우 탄창",
+            "textDesc" : "장전 시간을 {0}% 감소시킨다."
+        },
+        {
+            "itemId" : 7,
+            "textName" : "향상된 속도 모듈",
+            "textDesc" : "이동속도를 {0} 상승시킨다."
+        },
+        {
+            "itemId" : 8,
+            "textName" : "향상된 수집 모듈",
+            "textDesc" : "아이템 수집 범위를 {0} 상승시킨다."
+        },
+        {
+            "itemId" : 9,
+            "textName" : "대용량 탄창",
+            "textDesc" : "장착한 무기의 탄창을 두배 늘린다."
+        },
+        {
+            "itemId" : 10,
+            "textName" : "지능형 탄창 교환기",
+            "textDesc" : "탄창이 비워졌을때 자동으로 재장전 한다."
+        }
+    ]
+    }
