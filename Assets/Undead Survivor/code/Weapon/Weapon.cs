@@ -14,7 +14,12 @@ public class Weapon : MonoBehaviour
     public int maxBulletCount;
     public float reloadingTime;
     public float reloadingTimeMax;
+    public bool isShooting = false;
     public bool isReloading = false;
+    public bool autoFire = true;
+    public Transform firePosTransform;
+    public Transform autoFireTarget = null;
+
 
     public event Action<int> OnBulletFiredEvent;
     public event Action ReloadingEvent;
@@ -31,11 +36,17 @@ public class Weapon : MonoBehaviour
     public virtual string LevelUpDesc() { return null; }
     public virtual void LevelUp() { }
 
+    public Transform ScanAutoTarget()
+    {
+        return player.scanner.nearest_target;
+    }
+
     public void SwitchWeapon(bool isActivate)
     {
         gameObject.SetActive(isActivate);
         bulletCount = 0;
         reloadingTime = 0;
+        isShooting = false;
         isReloading = false;
         if (isActivate) {StartCoroutine(Reloading());}
     }

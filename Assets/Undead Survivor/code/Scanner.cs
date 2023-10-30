@@ -18,7 +18,7 @@ public class Scanner : MonoBehaviour
     public Transform GetNearest()
     {
         Transform result = null;
-        float diff = 100;
+        float diff = 10000;
 
         foreach(RaycastHit2D raycastHit2D in targets)
         {
@@ -32,6 +32,12 @@ public class Scanner : MonoBehaviour
             }
         }
 
+        if (result != null) 
+        { 
+            if (!result.CompareTag("Enemy")) { result = null; } 
+            if (Vector3.Distance(transform.position,result.transform.position) > scan_range) { result = null; }
+        }
+        
         return result;
     }
 }

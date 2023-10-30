@@ -21,7 +21,11 @@ public class DamageText : MonoBehaviour
 
         text = GetComponent<Text>();
         alpha = text.color;
-        
+
+    }
+
+    private void OnEnable()
+    {
         Invoke("DestroyObject", destroyTime);
     }
 
@@ -35,6 +39,6 @@ public class DamageText : MonoBehaviour
 
     private void DestroyObject()
     {
-        Destroy(transform.parent.gameObject);
+        gameObject.SetActive(false);
     }
 }

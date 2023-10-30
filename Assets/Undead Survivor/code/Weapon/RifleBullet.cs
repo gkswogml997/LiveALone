@@ -6,20 +6,20 @@ public class RifleBullet : MonoBehaviour
 {
     public float damage;
     public int per;
-    public float bulletSpeed = 15;
+    public float bulletSpeed;
 
-    Rigidbody2D rigidbody;
+    Rigidbody2D bulletRigid;
 
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        bulletRigid = GetComponent<Rigidbody2D>();
     }
 
     public void Init(float damage, int per, Vector2 dir)
     {
         this.damage = damage;
         this.per = per;
-        rigidbody.velocity = dir * bulletSpeed;
+        bulletRigid.velocity = dir * bulletSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,9 +29,10 @@ public class RifleBullet : MonoBehaviour
 
         //act
         per--;
+        collision.GetComponent<Enemy>().Hit(damage);
         if (per < 0)
         {
-            rigidbody.velocity = Vector2.zero;
+            bulletRigid.velocity = Vector2.zero;
             gameObject.SetActive(false);
         }
     }

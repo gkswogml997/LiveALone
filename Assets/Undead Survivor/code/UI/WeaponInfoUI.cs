@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class WeaponInfoUI : MonoBehaviour
 {
     public Player player;
-    Weapon weapon;
+    public Weapon weapon;
+    public int weaponNum;
     Image weaponSprite;
     Text weaponName;
 
@@ -21,23 +22,29 @@ public class WeaponInfoUI : MonoBehaviour
         weaponSprite = GetComponentsInChildren<Image>()[0];
         weaponName = GetComponentsInChildren<Text>()[0];
 
-        for (int i = 0; i < 120; i++)
+
+        for (int i = 0; i < 60; i++)
         {
-            Vector3 bulletPos = new Vector3(64f + i * 8, 1f, 0f);
-            GameObject bullet = Instantiate(prefab,transform.position+bulletPos,Quaternion.identity);
+            Vector3 bulletPos = new Vector3(30f + i * 2, -70f, 0f);
+            GameObject bullet = Instantiate(prefab,transform.position+ bulletPos,Quaternion.Euler(0, 0, 45f));
             bullet.transform.SetParent(transform,false);
             bulletList.Add(bullet);
             bullet.gameObject.SetActive(false);
         }
-        FindObjectOfType<Weapon>().OnBulletFiredEvent += Fire;
-        FindObjectOfType<Weapon>().ReloadingEvent += Init;
+        foreach(Weapon weapon in player.equipmentWeaponList)
+        {
+            weapon.OnBulletFiredEvent += Fire;
+            weapon.ReloadingEvent += Init;
+        }
+        
         Init();
     }
 
     public void Init()
     {
-        SpriteRenderer spriteRenderer = weapon.GetComponent<SpriteRenderer>();
+        weaponNum = player.equipmentWeaponNumber;
         weapon = player.equipmentWeaponList[player.equipmentWeaponNumber];
+        SpriteRenderer spriteRenderer = weapon.GetComponent<SpriteRenderer>();
         weaponName.text = weapon.weaponName + " " + weapon.bulletCount;
         weaponSprite.sprite = spriteRenderer.sprite;
         for(int i = 0; i < bulletList.Count; i++)
@@ -53,7 +60,8 @@ public class WeaponInfoUI : MonoBehaviour
     {
         weapon = player.equipmentWeaponList[player.equipmentWeaponNumber];
         weaponName.text = weapon.weaponName + " " + (i - 1);
-        Instantiate(usedBullet, bulletList[i-1].transform.position, Quaternion.identity).transform.SetParent(transform,false);
+        Vector3 pos = new Vector3(30f + i * 2, -70f, 0f);
+        Instantiate(usedBullet, transform.position + pos, Quaternion.Euler(0, 0, 45f)).transform.SetParent(transform,false);
         bulletList[i - 1].SetActive(false);
     }
 

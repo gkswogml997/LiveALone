@@ -26,6 +26,7 @@ public class Gold : MonoBehaviour
     public bool isCreate = true;
     private bool isFalling = false;
     public bool isGem;
+    public bool isConfirmedUnique = false;
     private Vector3 startPos;
     public float floatTime = 0.3f;
     public float floatSpeed = 5f;
@@ -37,7 +38,6 @@ public class Gold : MonoBehaviour
     Player player;
     Text itemInfo;
     Image infoBackground;
-    Rigidbody2D rigidbody;
     SpriteRenderer spriteRenderer;
     List<GemData> gemData;
     Sprite[] gemSpriteList;
@@ -52,7 +52,6 @@ public class Gold : MonoBehaviour
 
         itemInfo = textTrans.GetComponent<Text>();
         infoBackground = backTrans.GetComponent<Image>();
-        rigidbody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -88,12 +87,13 @@ public class Gold : MonoBehaviour
     }
 
 
-    public void Init(int value)
+    public void Init(int value, bool uniqueCheck)
     {
+        isConfirmedUnique = uniqueCheck;
         //보석 인지 아닌지
         int randomNumber = Random.Range(1, 101);
 
-        if (randomNumber <= 5)
+        if (randomNumber <= 10 || isConfirmedUnique)
         {
             CreateGem();
         }
@@ -129,7 +129,9 @@ public class Gold : MonoBehaviour
         if (goldValue <= 10) { spriteRenderer.sprite = goldImageList[0]; }
         if (goldValue > 10 && goldValue <= 50) { spriteRenderer.sprite = goldImageList[1]; }
         if (goldValue > 50 && goldValue <= 100) { spriteRenderer.sprite = goldImageList[2]; }
-        if (goldValue > 100) { spriteRenderer.sprite = goldImageList[3]; }
+        if (goldValue > 100 && goldValue <= 150) { spriteRenderer.sprite = goldImageList[3]; }
+        if (goldValue > 150 && goldValue <= 200) { spriteRenderer.sprite = goldImageList[4]; }
+        if (goldValue > 200) { spriteRenderer.sprite = goldImageList[5]; }
 
         itemInfo.text = goldValue.ToString() + " G";
     }
@@ -137,7 +139,13 @@ public class Gold : MonoBehaviour
     public void CreateGem()
     {
         isGem = true;
-        itemId = Random.Range(0, gemData.Count);
+        itemId = Random.Range(0, 9);
+        int randomNumber = Random.Range(1, 101);
+        if (randomNumber <= 20 || isConfirmedUnique)
+        {
+            itemId = Random.Range(9, gemData.Count);
+        }
+
         nameColor = gemData[itemId].nameColor;
         itemName = gemData[itemId].textName;
         spriteRenderer.sprite = gemSpriteList[itemId];
@@ -188,6 +196,8 @@ public class Gold : MonoBehaviour
         }
         else
         {
+            if (gemData[itemId].rating == "unique")
+            { GameManager.instance.itemAlert.InsertAlertQueue(spriteRenderer.sprite, itemInfo.text); }
             player.InventoryAdd(itemId, 1);
         }
         gameObject.SetActive(false);

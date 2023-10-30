@@ -1,0 +1,76 @@
+{
+    "sellItems": [
+    {
+    "itemId": 0,
+    "textName": "Useless Junk",
+    "textDesc": "Selling in bulk for {0} gold each."
+    },
+    {
+    "itemId": 1,
+    "textName": "Recyclable Material",
+    "textDesc": "Selling in bulk for {0} gold each."
+    },
+    {
+    "itemId": 2,
+    "textName": "Usable Secondhand Item",
+    "textDesc": "Selling in bulk for {0} gold each."
+    }
+    ],
+    "items": [
+    {
+    "itemId": 0,
+    "textName": "Health Enhancement",
+    "textDesc": "Increases maximum health by {0} percent."
+    },
+    {
+    "itemId": 1,
+    "textName": "Muscle Enhancement",
+    "textDesc": "Increases attack power by {0} percent."
+    },
+    {
+    "itemId": 2,
+    "textName": "Regeneration Serum",
+    "textDesc": "Increases health regeneration by {0} percent."
+    },
+    {
+    "itemId": 3,
+    "textName": "Skin Hardening",
+    "textDesc": "Increases defense by {0} percent."
+    },
+    {
+    "itemId": 4,
+    "textName": "Endless Greed",
+    "textDesc": "Increases gold acquisition rate by {0} percent."
+    },
+    {
+    "itemId": 5,
+    "textName": "Endless Lust",
+    "textDesc": "Increases drop rate by {0} percent."
+    },
+    {
+    "itemId": 6,
+    "textName": "Improved Speed Module",
+    "textDesc": "Increases movement speed by {0}."
+    },
+    {
+    "itemId": 7,
+    "textName": "Enhanced Collection Module",
+    "textDesc": "Increases item collection range by {0} percent."
+    },
+    {
+    "itemId": 8,
+    "textName": "Quick Draw Magazine",
+    "textDesc": "Reduces reloading time by {0} percent."
+    },
+    {
+    "itemId": 9,
+    "textName": "High-Capacity Magazine",
+    "textDesc": "Doubles the ammo capacity of equipped weapon."
+    },
+    {
+    "itemId": 10,
+    "textName": "Intelligent Magazine Exchanger",
+    "textDesc": "Automatically reloads when the magazine is empty."
+    }
+    ]
+}

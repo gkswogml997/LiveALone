@@ -6,7 +6,7 @@ using static Cinemachine.DocumentationSortingAttribute;
 
 public class HUD : MonoBehaviour
 {
-    public enum InfoType { Exp, Level, Kill, Time, Health, Weapon}
+    public enum InfoType { Exp, Level, Kill, Time, Health, Weapon, Gold}
     public InfoType type;
 
     public Player player;
@@ -27,7 +27,8 @@ public class HUD : MonoBehaviour
         {
             case InfoType.Exp:
                 break;
-            case InfoType.Level:
+            case InfoType.Gold:
+                myText.text = GameManager.instance.gold+"G";
                 break;
             case InfoType.Kill:
                 myText.text = string.Format("{0:F0}", GameManager.instance.kill);
@@ -41,7 +42,7 @@ public class HUD : MonoBehaviour
             case InfoType.Health:
                 float curHp = player.hp;
                 float maxHp = player.max_hp;
-                GetComponentsInChildren<Text>()[0].text = curHp+" / "+ maxHp;
+                GetComponentsInChildren<Text>()[0].text = (int)curHp+" / "+ (int)maxHp;
                 mySilder.value = curHp / maxHp;
                 break;
             case InfoType.Weapon:

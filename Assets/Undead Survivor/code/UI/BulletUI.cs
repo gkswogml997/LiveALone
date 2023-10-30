@@ -1,55 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BulletUI : MonoBehaviour
 {
-    public bool isCreate = true;
-    private bool isFalling = false;
-    private Vector3 startPos;
-    public float floatTime = 0.5f;
-    public float floatSpeed = 500f;
-
     RectTransform rectTransform;
+    Vector3 initialPosition;
+    Vector3 initialVelocity;
+    float gravity = -9.8f;
 
-    private void Awake()
+    void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+        initialPosition = rectTransform.anchoredPosition;
+        initialVelocity = new Vector3(Random.Range(45f, 90f), 30f, 0f); // 랜덤한 초기 속도 설정
+        Invoke("ObjectDestroy", 3f);
     }
 
-    private void FixedUpdate()
+    void Update()
     {
-        //exception
-        if (!GameManager.instance.isLive) { return; }
+        transform.Rotate(new Vector3(0, 0, 5));
 
-        //act
-        if (isCreate) { CreateAnimation(); }
-        else
-        {
-            Destroy(transform.gameObject);
-        }
+        rectTransform.anchoredPosition += (Vector2)initialVelocity * Time.deltaTime;
+
+        // 중력 적용
+        initialVelocity.y += gravity * Time.deltaTime * 10;
     }
 
-    private void CreateAnimation()
+    void ObjectDestroy()
     {
-        rectTransform.Rotate(new Vector3(0, 0, 5));
-        Vector3 myPos = rectTransform.position; // localPosition을 사용하여 위치 조정
-        if (!isFalling)
-        {
-            myPos.y += floatSpeed * Time.deltaTime;
-            rectTransform.position = myPos;
-            floatTime -= Time.deltaTime;
-            if (floatTime <= 0) { isFalling = true; }
-        }
-        else
-        {
-            myPos.y -= floatSpeed * Time.deltaTime;
-            rectTransform.position = myPos;
-            if (rectTransform.position.y < startPos.y) { isCreate = false; }
-        }
+        Destroy(gameObject);
     }
-
-
 }

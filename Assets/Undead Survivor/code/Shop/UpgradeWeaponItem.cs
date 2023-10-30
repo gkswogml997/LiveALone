@@ -8,18 +8,23 @@ using static Cinemachine.DocumentationSortingAttribute;
 public class UpgradeWeaponItem: MonoBehaviour
 {
     public Weapon weapon;
-    public int requireGemIds = 0;
+    public int makeGemId = 0;
+    public int upradeGemId = 1;
 
     Image icon;
+    Image outline;
     Text textLevel;
     Text textName;
     Text textDesc;
-
+    Shop shop;
     
 
     private void Awake()
     {
-        icon = GetComponentsInChildren<Image>()[1];
+        shop = GetComponentInParent<Shop>();
+        outline = GetComponentsInChildren<Image>()[1];
+        icon = GetComponentsInChildren<Image>()[2];
+        outline.sprite = weapon.GetComponent<SpriteRenderer>().sprite;
         icon.sprite = weapon.GetComponent<SpriteRenderer>().sprite;
 
         Text[] texts = GetComponentsInChildren<Text>();
@@ -33,28 +38,37 @@ public class UpgradeWeaponItem: MonoBehaviour
         textLevel.text = "Lv. " + weapon.level;
         textName.text = weapon.weaponName;
         textDesc.text = weapon.LevelUpDesc();
-
-        InventoryItem requireGem = GameManager.instance.player.InventoryFindItem(requireGemIds);
-        if (requireGem == null)
-        {
-            textDesc.text = "필요한 보석이 모자랍니다.";
-            GetComponent<Button>().interactable = false;
-        }
-        else
-        {
-            GetComponent<Button>().interactable = true;
-        }
-        if (weapon.level == weapon.maxLevel)
-        {
-            GetComponent<Button>().interactable = false;
-        }
     }
 
 
     public void OnClick()
     {
-        weapon.LevelUp();
-        GameManager.instance.player.InventoryRemove(requireGemIds, 1);
+        if (weapon.level == weapon.maxLevel) {
+            shop.SetDialogMessage(shop.blacksmithDialog.fail);
+            return;
+        }
+
+        InventoryItem requireGem = null;
+        if (weapon.level == 0)
+        {
+            requireGem = GameManager.instance.player.InventoryFindItem(makeGemId);
+        }
+        else
+        {
+            requireGem = GameManager.instance.player.InventoryFindItem(upradeGemId);
+        }
+
+        if (requireGem == null)
+        {
+            shop.SetDialogMessage(shop.blacksmithDialog.moreGold);
+        }
+        else
+        {
+            shop.SetDialogMessage(shop.blacksmithDialog.buy);
+            weapon.LevelUp();
+            GameManager.instance.player.InventoryRemove(requireGem.itemId, 1);
+        }
+       
         UpToDateInfo();
     }
 }

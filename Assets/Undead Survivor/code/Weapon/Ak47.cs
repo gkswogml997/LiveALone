@@ -21,12 +21,11 @@ public class Ak47 : Weapon
     float timer = 10;
 
     [Header("외부 컴포넌트 연결용")]
-    Transform firePosTransform;
+    
     public List<Ak47LevelUpData> levelUpDataList;
     public Ak47LevelDecs levelUpText;
 
-    [Header("내부 판정")]
-    public bool isShooting = false;
+    
 
     private void Awake()
     {
@@ -45,14 +44,26 @@ public class Ak47 : Weapon
 
         if (timer > speed)
         {
-            if (Input.GetMouseButton(0) && !isShooting && !isReloading) 
-            { 
-                StartCoroutine(Shoot());
-                timer = 0;
+            if (!isShooting && !isReloading)
+            {
+                if (Input.GetMouseButton(0))
+                {
+                    StartCoroutine(Shoot());
+                    timer = 0;
+                }
+                if (autoFire)
+                {
+                    if (player.aimPointer.aimingTarget != null && player.aimPointer.aimingTarget.CompareTag("Enemy"))
+                    {
+                        StartCoroutine(Shoot());
+                        timer = 0;
+                    }
+                }
+
             }
         }
         //자동 재장전
-        if (Input.GetMouseButton(0) && bulletCount <= 0 && player.autoReload)
+        if ((Input.GetMouseButton(0) || autoFire) && bulletCount <= 0 && player.autoReload)
         {
             if (!isReloading) { StartCoroutine(Reloading()); }
         }
@@ -90,15 +101,15 @@ public class Ak47 : Weapon
 
     void Fire()
     {
-        Vector2 mouseOriPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        Vector2 target_pos = Camera.main.ScreenToWorldPoint(mouseOriPos);
+        Vector2 target_pos = player.aimPointer.transform.position;
         Vector2 target_dir = new Vector2 (target_pos.x - transform.position.x, target_pos.y - transform.position.y);
         target_dir = target_dir.normalized;
 
         Transform bullet = GameManager.instance.pool.Get(bulletId).transform;
         bullet.position = firePosTransform.position;
         bullet.rotation = Quaternion.FromToRotation(Vector3.up, target_dir) * Quaternion.Euler(0, 0, 90f); ;
-        bullet.GetComponent<RifleBullet>().Init(damage, count, target_dir); // -1 is INF
+        bullet.GetComponent<RifleBullet>().Init(damage * player.attackPower, count, target_dir); // -1 is INF
+        firePosTransform.GetComponent<FireEffect>().StartFireEffect();
         PublishFireEvent(bulletCount);
 
         AudioManager.instance.PlaySfx(AudioManager.SFX.Range);

@@ -3,17 +3,17 @@
         {
             "level" : 1,
             "damageRise" : 1,
-            "speedRise" : 0.1
+            "speedRise" : 0.8
         },
         {
             "level" : 2,
-            "damageRise" : 3,
-            "speedRise" : 0.05
+            "damageRise" : 2,
+            "speedRise" : 0.2
         },
         {
             "level" : 3,
-            "damageRise" : 3,
-            "speedRise" : 0.04
+            "damageRise" : 2,
+            "speedRise" : 0.2
         }
     ]
     }

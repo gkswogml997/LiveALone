@@ -1,0 +1,174 @@
+{
+    "monsterDatas": [
+        {
+            "monsterNumber": 0,
+            "hp": 0.7,
+            "speed": 1.4,
+            "range": 0,
+            "attackPoint": 1,
+            "attackSpeed": 1
+        },
+        {
+            "monsterNumber": 1,
+            "hp": 0.7,
+            "speed": 1,
+            "range": 0,
+            "attackPoint": 1,
+            "attackSpeed": 1
+        },
+        {
+            "monsterNumber": 2,
+            "hp": 0.7,
+            "speed": 0.7,
+            "range": 0,
+            "attackPoint": 1.4,
+            "attackSpeed": 1
+        },
+        {
+            "monsterNumber": 3,
+            "hp": 0.7,
+            "speed": 1.4,
+            "range": 0,
+            "attackPoint": 1,
+            "attackSpeed": 1
+        },
+        {
+            "monsterNumber": 4,
+            "hp": 0.7,
+            "speed": 1,
+            "range": 0,
+            "attackPoint": 1,
+            "attackSpeed": 1
+        },
+        {
+            "monsterNumber": 5,
+            "hp": 1.4,
+            "speed": 1.4,
+            "range": 0,
+            "attackPoint": 1,
+            "attackSpeed": 1
+        },
+        {
+            "monsterNumber": 6,
+            "hp": 1.4,
+            "speed": 0.7,
+            "range": 0,
+            "attackPoint": 1.4,
+            "attackSpeed": 1
+        },
+        {
+            "monsterNumber": 7,
+            "hp": 1.4,
+            "speed": 0.7,
+            "range": 0,
+            "attackPoint": 1.4,
+            "attackSpeed": 1
+        },
+        {
+            "monsterNumber": 8,
+            "hp": 1.4,
+            "speed": 1,
+            "range": 0,
+            "attackPoint": 1.4,
+            "attackSpeed": 1
+        },
+        {
+            "monsterNumber": 9,
+            "hp": 1.4,
+            "speed": 1,
+            "range": 0.7,
+            "attackPoint": 1,
+            "attackSpeed": 1.4
+        },
+        {
+            "monsterNumber": 10,
+            "hp": 0.7,
+            "speed": 0.7,
+            "range": 0.7,
+            "attackPoint": 1,
+            "attackSpeed": 1
+        },
+        {
+            "monsterNumber": 11,
+            "hp": 0.7,
+            "speed": 0.7,
+            "range": 0.7,
+            "attackPoint": 1,
+            "attackSpeed": 1
+        },
+        {
+            "monsterNumber": 12,
+            "hp": 0.7,
+            "speed": 1,
+            "range": 1,
+            "attackPoint": 1,
+            "attackSpeed": 1.4
+        },
+        {
+            "monsterNumber": 13,
+            "hp": 0.7,
+            "speed": 1,
+            "range": 1,
+            "attackPoint": 1.4,
+            "attackSpeed": 1
+        },
+        {
+            "monsterNumber": 14,
+            "hp": 1.4,
+            "speed": 0.7,
+            "range": 1,
+            "attackPoint": 1,
+            "attackSpeed": 0.7
+        },
+        {
+            "monsterNumber": 15,
+            "hp": 1.4,
+            "speed": 0.7,
+            "range": 1.4,
+            "attackPoint": 0.7,
+            "attackSpeed": 1.4
+        },
+        {
+            "monsterNumber": 16,
+            "hp": 1.4,
+            "speed": 1,
+            "range": 1.4,
+            "attackPoint": 1,
+            "attackSpeed": 1.4
+        },
+        {
+            "monsterNumber": 17,
+            "hp": 1.4,
+            "speed": 1.4,
+            "range": 1.4,
+            "attackPoint": 1.4,
+            "attackSpeed": 1.4
+        }
+    ],
+    "bossDatas": [
+        {
+            "monsterNumber": 0,
+            "hp": 1.5,
+            "speed": 2,
+            "range": 2,
+            "attackPoint": 2,
+            "attackSpeed": 1
+        },
+        {
+            "monsterNumber": 1,
+            "hp": 1.5,
+            "speed": 1,
+            "range": 2,
+            "attackPoint": 2,
+            "attackSpeed": 1
+        },
+        {
+            "monsterNumber": 2,
+            "hp": 3,
+            "speed": 2,
+            "range": 1,
+            "attackPoint": 1,
+            "attackSpeed": 1
+        }
+    ]
+}

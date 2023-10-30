@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ACBossEnemy1
+  m_Controller: {fileID: 9100000, guid: 6ba25be370ab3134cb2e8cda4d72687f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 26b6e61c3ecf1a247bffa4620426eb66, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6b47e82723c8bf940845cd777010aa00, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9637a337de35fdc4992b4a7b75137a3a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d0eff1fd0421b7f47829788851ccda53, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0a8cb5963856cdf4d93cf2bdcb3aa2bd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c656814ba79697b478038d0975dcdc33, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2490092516d04bb468703b8570e46b05, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1ad07e65f11d39d4481c38dc14378331, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 03bf20fdca895b342b9fb35bbe053a7e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2d330c2838404d54e9701c78d056f0e1, type: 2}

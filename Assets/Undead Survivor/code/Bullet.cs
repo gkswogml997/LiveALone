@@ -8,11 +8,11 @@ public class Bullet : MonoBehaviour
     public float damage;
     public int per;
 
-    Rigidbody2D rigidbody;
+    Rigidbody2D bulletRigid;
 
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        bulletRigid = GetComponent<Rigidbody2D>();
     }
 
     public void Init(float damage, int per, Vector2 dir)
@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
 
         if (per >= 0)
         {
-            rigidbody.velocity = dir * 30;
+            bulletRigid.velocity = dir * 30;
         }
     }
 
@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
         per--;
         if (per < 0)
         {
-            rigidbody.velocity = Vector2.zero;
+            bulletRigid.velocity = Vector2.zero;
             gameObject.SetActive(false);
         }
     }

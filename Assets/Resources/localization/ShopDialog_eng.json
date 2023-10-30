@@ -1,0 +1,24 @@
+{
+    "shop": {
+        "shopKeeperName": "Merchant",
+        "sayHi": "Looking to buy something?",
+        "buy": "Excellent choice.",
+        "moreGold": "Looks like you're short on cash.",
+        "fail": "That item is already at its maximum level."
+    },
+    "blackSmith": {
+        "shopKeeperName": "Weapon Smith",
+        "sayHi": "Give me the materials; I don't take money.",
+        "buy": "Modification complete.",
+        "moreGold": "I need more components.",
+        "fail": "This weapon can't be upgraded further."
+    },
+    "inventory": {
+        "shopKeeperName": "Junker",
+        "sayHi": "I'll take any junk you've got!",
+        "buy": "This is pure garbage! Be thankful I'm buying it.",
+        "buy2": "I can rust it, weld it, smear oil on it... might be useful.",
+        "buy3": "You can use it right away! Selling it is the right choice, isn't it?",
+        "fail": "Are you sure you have items to sell?"
+    }
+}

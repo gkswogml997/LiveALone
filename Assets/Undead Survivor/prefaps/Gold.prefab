@@ -415,7 +415,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: f7691dff883b68c44a3f1eeb8b46de4a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 03451b23620be774dbd960372ee3a4ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -445,10 +445,12 @@ MonoBehaviour:
   speed: 2
   detectionRadius: 2
   goldImageList:
-  - {fileID: 21300000, guid: f7691dff883b68c44a3f1eeb8b46de4a, type: 3}
-  - {fileID: 21300000, guid: 2bb2fcf618ebf714291c9c7db07ca924, type: 3}
-  - {fileID: 21300000, guid: b37ec18b62079054982582603f5a350c, type: 3}
-  - {fileID: 21300000, guid: 7b34cb4ce8dfa8d4ca72f461a905385c, type: 3}
+  - {fileID: 21300000, guid: 03451b23620be774dbd960372ee3a4ac, type: 3}
+  - {fileID: 21300000, guid: 57272a82443c1ab4cb7f0c4eb5b1a638, type: 3}
+  - {fileID: 21300000, guid: 1f61f45cce0264440971cec704f46eb2, type: 3}
+  - {fileID: 21300000, guid: 9bbef610952dee340aecf04b26815ded, type: 3}
+  - {fileID: 21300000, guid: 549a0c337c285404da7dbc1c0f2d73f5, type: 3}
+  - {fileID: 21300000, guid: beec182b1a7f58d4899bbe3e31818150, type: 3}
   isMoving: 0
   isCreate: 1
   isGem: 0

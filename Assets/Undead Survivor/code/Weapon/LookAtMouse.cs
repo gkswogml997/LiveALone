@@ -13,16 +13,16 @@ public class LookAtMouse : MonoBehaviour
 
     Vector2 myPos ,myPosReverse;
 
-    [SerializeField]
+    Player player;
     GameObject weaponParent;
     SpriteRenderer spriteRenderer;
-    [SerializeField]
     SpriteRenderer[] weaponSpriteRenderer;
 
     private void Awake()
     {
         myPos = new Vector2(myPosX, myPosY);
         myPosReverse = new Vector2(-myPosX, myPosY);
+        player = GetComponentInParent<Player>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         weaponParent = transform.GetChild(0).gameObject;
         weaponSpriteRenderer = weaponParent.GetComponentsInChildren<SpriteRenderer>(true);
@@ -33,10 +33,9 @@ public class LookAtMouse : MonoBehaviour
         //exception
         if (!GameManager.instance.isLive) { return; }
 
-        //act
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 aimPointPos = player.aimPointer.transform.position;
         Vector3 gunPosition = transform.position; // ÃÑ±¸ÀÇ À§Ä¡
-        Vector3 direction = (mousePosition - gunPosition).normalized;
+        Vector3 direction = (aimPointPos - gunPosition).normalized;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         float normalizedAngle = (angle + 360) % 360;

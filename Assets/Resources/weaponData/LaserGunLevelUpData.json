@@ -1,0 +1,34 @@
+{
+    "levelDatas" : [
+        {
+            "level" : 1,
+            "damageRise" : 1,
+            "speedRise" : 2,
+            "laserWidth" : 0.1
+        },
+        {
+            "level" : 2,
+            "damageRise" : 1,
+            "speedRise" : 0.3,
+            "laserWidth" : 0
+        },
+        {
+            "level" : 3,
+            "damageRise" : 1,
+            "speedRise" : 0.3,
+            "laserWidth" : 0.1
+        },
+        {
+            "level" : 4,
+            "damageRise" : 1,
+            "speedRise" : 0.3,
+            "laserWidth" : 0
+        },
+        {
+            "level" : 5,
+            "damageRise" : 1,
+            "speedRise" : 0.3,
+            "laserWidth" : 0.1
+        }
+    ]
+    }

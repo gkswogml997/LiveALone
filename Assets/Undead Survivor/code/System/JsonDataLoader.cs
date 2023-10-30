@@ -17,6 +17,34 @@ public class ShopItemData
 public class ItemDatabase
 {
     public List<ShopItemData> items;
+    public List<ShopItemData> sellItems;
+}
+/*다이어 로그 섹션*/
+[System.Serializable]
+public class ShopDialog
+{
+    public string shopKeeperName;
+    public string sayHi;
+    public string buy;
+    public string moreGold;
+    public string fail;
+}
+[System.Serializable]
+public class InventoryDialog
+{
+    public string shopKeeperName;
+    public string sayHi;
+    public string buy;
+    public string buy2;
+    public string buy3;
+    public string fail;
+}
+[System.Serializable]
+public class ShopDialogDatas
+{
+    public ShopDialog shop;
+    public ShopDialog blackSmith;
+    public InventoryDialog inventory;
 }
 
 /*드랍 아이템 섹션*/
@@ -27,6 +55,7 @@ public class GemData
     public string nameColor;
     public string textName;
     public string textDesc;
+    public string rating;
 }
 [System.Serializable]
 public class DropItemDatabase
@@ -85,38 +114,197 @@ public class Ak47LevelUpDataList
     public List<Ak47LevelUpData> levelDatas;
 }
 
+/*LaserGun*/
+[System.Serializable]
+public class LaserGunLevelDecs
+{
+    public string weaponName;
+    public string weaponDesc;
+    public string damage;
+    public string speed;
+    public string laserWidth;
+}
+[System.Serializable]
+public class LaserGunLevelUpData
+{
+    public int level;
+    public float damageRise;
+    public float speedRise;
+    public float laserWidth;
+}
+[System.Serializable]
+public class LaserGunLevelUpDataList
+{
+    public List<LaserGunLevelUpData> levelDatas;
+}
+
+/*ChainGun*/
+[System.Serializable]
+public class ChainGunLevelDecs
+{
+    public string weaponName;
+    public string weaponDesc;
+    public string damage;
+    public string speed;
+    public string targetNumber;
+    public string targetDir;
+}
+[System.Serializable]
+public class ChainGunLevelUpData
+{
+    public int level;
+    public float damageRise;
+    public float speedRise;
+    public int targetNumber;
+    public int targetDir;
+}
+[System.Serializable]
+public class ChainGunLevelUpDataList
+{
+    public List<ChainGunLevelUpData> levelDatas;
+}
+
+/*FireGun*/
+[System.Serializable]
+public class FireGunLevelDecs
+{
+    public string weaponName;
+    public string weaponDesc;
+    public string damage;
+    public string range;
+    public string dotDamage;
+}
+[System.Serializable]
+public class FireGunLevelUpData
+{
+    public int level;
+    public float damageRise;
+    public float range;
+    public float dotDamage;
+}
+[System.Serializable]
+public class FireGunLevelUpDataList
+{
+    public List<FireGunLevelUpData> levelDatas;
+}
+
+/*ShotGun*/
+[System.Serializable]
+public class ShotGunLevelDecs
+{
+    public string weaponName;
+    public string weaponDesc;
+    public string damage;
+    public string range;
+    public string bulletNumber;
+}
+[System.Serializable]
+public class ShotGunLevelUpData
+{
+    public int level;
+    public float damageRise;
+    public float range;
+    public float bulletNumber;
+}
+[System.Serializable]
+public class ShotGunLevelUpDataList
+{
+    public List<ShotGunLevelUpData> levelDatas;
+}
 
 /*무기 전체 string 부르기*/
+[System.Serializable]
 public class WeaponLevelUpDesc
 {
     public List<PistolLevelDecs> pistol;
     public List<Ak47LevelDecs> ak47;
+    public List<LaserGunLevelDecs> laserGun;
+    public List<ChainGunLevelDecs> chainGun;
+    public List<FireGunLevelDecs> fireGun;
+    public List<ShotGunLevelDecs> shotGun;
 }
 
+/*몬스터 데이터 섹션*/
+[System.Serializable]
+public class MonsterData
+{
+    public int monsterNumber;
+    public float hp;
+    public float speed;
+    public float range;
+    public float attackPoint;
+    public float attackSpeed;
+}
+[System.Serializable]
+public class MonsterDataList
+{
+    public List<MonsterData> monsterDatas;
+    public List<MonsterData> bossDatas;
+}
+[System.Serializable]
+public class AlertData
+{
+    public string title;
+    public string content;
+}
+[System.Serializable]
+public class AlertDataList
+{
+    public List<AlertData> popUp;
+    public List<AlertData> hint;
+}
 
 public class JsonDataLoader : MonoBehaviour
 {
     [Header("수동 추가!!!")]
     public Sprite[] gemSpriteList;
     public Sprite[] shopItemSpriteList;
+    public Sprite[] shopSellItemSpriteList;
 
     [Header("상점 아이템")]
     public List<ShopItemData> shopItemDataList;
+    public List<ShopItemData> shopSellItemDataList;
     public List<GemData> gemDataList;
+    public ShopDialog shopDialog;
+    public ShopDialog blacksmithDialog;
+    public InventoryDialog inventoryDialog;
 
     [Header("무기 레벨업 데이터")]
     public List<Ak47LevelUpData> Ak47_levelUpDataList;
     public Ak47LevelDecs Ak47_levelUpDesc;
     public List<PistolLevelUpData> Pistol_levelUpDataList;
     public PistolLevelDecs Pistol_levelUpDesc;
+    public List<LaserGunLevelUpData> LaserGun_levelUpDataList;
+    public LaserGunLevelDecs LaserGun_levelUpDesc;
+    public List<ChainGunLevelUpData> ChainGun_levelUpDataList;
+    public ChainGunLevelDecs ChainGun_levelUpDesc;
+    public List<FireGunLevelUpData> FireGun_levelUpDataList;
+    public FireGunLevelDecs FireGun_levelUpDesc;
+    public List<ShotGunLevelUpData> ShotGun_levelUpDataList;
+    public ShotGunLevelDecs ShotGun_levelUpDesc;
+
+    [Header("알람 데이터")]
+    public List<AlertData> popUpAlert;
+    public List<AlertData> hintAlert;
+
+    [Header("몬스터 데이터")]
+    public List<MonsterData> monsterDatas;
+    public List<MonsterData> bossDatas;
 
     public void Init(string language)
     {
         LoadShopItemData(language);
         LoadDropItemData(language);
+        LoadShopDialog(language);
         LoadWeaponLevelUpDesc(language);
+        LoadAlert(language);
         LoadPistolLevelUpData();
         LoadAk47LevelUpData();
+        LoadLaserGunLevelUpData();
+        LoadChainGunLevelUpData();
+        LoadFireGunLevelUpData();
+        LoadShotGunLevelUpData();
+        LoadMonsterData();
     }
 
     public void LoadShopItemData(string language)
@@ -125,6 +313,7 @@ public class JsonDataLoader : MonoBehaviour
         string jsonContent = File.ReadAllText(filePath);
         ItemDatabase list = JsonUtility.FromJson<ItemDatabase>(jsonContent);
         shopItemDataList = list.items;
+        shopSellItemDataList = list.sellItems;
     }
     public void LoadDropItemData(string language)
     {
@@ -133,6 +322,15 @@ public class JsonDataLoader : MonoBehaviour
         DropItemDatabase list = JsonUtility.FromJson<DropItemDatabase>(jsonContent);
         gemDataList = list.gems;
     }
+    public void LoadShopDialog(string language)
+    {
+        string filePath = Application.dataPath + "/Resources/localization/ShopDialog_" + language + ".json";
+        string jsonContent = File.ReadAllText(filePath);
+        ShopDialogDatas datas = JsonUtility.FromJson<ShopDialogDatas>(jsonContent);
+        shopDialog = datas.shop;
+        blacksmithDialog = datas.blackSmith;
+        inventoryDialog = datas.inventory;
+    }
     public void LoadWeaponLevelUpDesc(string language)
     {
         string filePath = Application.dataPath + "/Resources/localization/WeaponLevelUpDesc_" + language + ".json";
@@ -140,8 +338,19 @@ public class JsonDataLoader : MonoBehaviour
         WeaponLevelUpDesc list = JsonUtility.FromJson<WeaponLevelUpDesc>(jsonContent);
         Pistol_levelUpDesc = list.pistol[0];
         Ak47_levelUpDesc = list.ak47[0];
+        LaserGun_levelUpDesc = list.laserGun[0];
+        ChainGun_levelUpDesc = list.chainGun[0];
+        FireGun_levelUpDesc = list.fireGun[0];
+        ShotGun_levelUpDesc = list.shotGun[0];
     }
-
+    public void LoadAlert(string language)
+    {
+        string filePath = Application.dataPath + "/Resources/localization/Alert_" + language + ".json";
+        string jsonContent = File.ReadAllText(filePath);
+        AlertDataList datas = JsonUtility.FromJson<AlertDataList>(jsonContent);
+        popUpAlert = datas.popUp;
+        hintAlert = datas.hint;
+    }
 
     //현지화가 필요 없는 부분
     public void LoadPistolLevelUpData()
@@ -157,5 +366,41 @@ public class JsonDataLoader : MonoBehaviour
         string jsonContent = File.ReadAllText(filePath);
         Ak47LevelUpDataList list = JsonUtility.FromJson<Ak47LevelUpDataList>(jsonContent);
         Ak47_levelUpDataList = list.levelDatas;
+    }
+    public void LoadLaserGunLevelUpData()
+    {
+        string filePath = Application.dataPath + "/Resources/weaponData/LaserGunLevelUpData.json";
+        string jsonContent = File.ReadAllText(filePath);
+        LaserGunLevelUpDataList list = JsonUtility.FromJson<LaserGunLevelUpDataList>(jsonContent);
+        LaserGun_levelUpDataList = list.levelDatas;
+    }
+    public void LoadChainGunLevelUpData()
+    {
+        string filePath = Application.dataPath + "/Resources/weaponData/ChainGunLevelUpData.json";
+        string jsonContent = File.ReadAllText(filePath);
+        ChainGunLevelUpDataList list = JsonUtility.FromJson<ChainGunLevelUpDataList>(jsonContent);
+        ChainGun_levelUpDataList = list.levelDatas;
+    }
+    public void LoadFireGunLevelUpData()
+    {
+        string filePath = Application.dataPath + "/Resources/weaponData/FireGunLevelUpData.json";
+        string jsonContent = File.ReadAllText(filePath);
+        FireGunLevelUpDataList list = JsonUtility.FromJson<FireGunLevelUpDataList>(jsonContent);
+        FireGun_levelUpDataList = list.levelDatas;
+    }
+    public void LoadShotGunLevelUpData()
+    {
+        string filePath = Application.dataPath + "/Resources/weaponData/ShotGunLevelUpData.json";
+        string jsonContent = File.ReadAllText(filePath);
+        ShotGunLevelUpDataList list = JsonUtility.FromJson<ShotGunLevelUpDataList>(jsonContent);
+        ShotGun_levelUpDataList = list.levelDatas;
+    }
+    public void LoadMonsterData()
+    {
+        string filePath = Application.dataPath + "/Resources/MonsterData/MonsterData.json";
+        string jsonContent = File.ReadAllText(filePath);
+        MonsterDataList list = JsonUtility.FromJson<MonsterDataList>(jsonContent);
+        monsterDatas = list.monsterDatas;
+        bossDatas = list.bossDatas;
     }
 }

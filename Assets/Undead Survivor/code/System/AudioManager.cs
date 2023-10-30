@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -52,6 +53,16 @@ public class AudioManager : MonoBehaviour
             sfxPlayers[i].volume = sfxVolume;
         }
     }
+
+    public void ChangeVolume()
+    {
+        bgmPlayer.volume = bgmVolume;
+        foreach(AudioSource sfx in sfxPlayers)
+        {
+            sfx.volume = sfxVolume;
+        }
+    }
+
     public void PlayBgm(bool isPlay)
     {
         if (isPlay)

@@ -9,12 +9,16 @@ public class ShopItem : MonoBehaviour
     public enum InfoType { HP, HPRecovery, Defence, Speed, AttackPower, GoldRange, GoldGrid, DropGrid, QuickDraw, BigMagazine, AutoReloading }
 
     public InfoType statId = 0;
-    public int price = 10;
+    public int price = 100;
     public float value;
     public int myLevel;
 
     public int itemId = 0;
     public Image icon;
+
+    bool isAct = true;
+
+    Shop shop;
     Text textName;
     Text textDesc;
     Text textPrice;
@@ -23,6 +27,7 @@ public class ShopItem : MonoBehaviour
 
     private void Awake()
     {
+        shop = GetComponentInParent<Shop>();
         icon = GetComponentsInChildren<Image>()[1];
         Text[] texts = GetComponentsInChildren<Text>();
         textName = texts[0];
@@ -32,10 +37,7 @@ public class ShopItem : MonoBehaviour
 
     public void UpToDateInfo()
     {
-        price = 10 * myLevel;
-
-        if (GameManager.instance.gold < price) { GetComponent<Button>().interactable = false; return; }
-        else { GetComponent<Button>().interactable = true; }
+        price = 100 * myLevel;
 
         shopItemData = GameManager.instance.jsonLoader.shopItemDataList[itemId];
         shopItemSprite = GameManager.instance.jsonLoader.shopItemSpriteList[itemId];
@@ -43,11 +45,20 @@ public class ShopItem : MonoBehaviour
         textName.text = shopItemData.textName;
         textDesc.text = string.Format(shopItemData.textDesc, value);
         textPrice.text = "" + price;
-
+        if (!isAct)
+        {
+            textPrice.text = "SoldOut";
+        }
     }
 
-    void OnClick()
+    public void OnClick()
     {
-        player.ChangeStat(statId, value);
+        if (GameManager.instance.gold < price) { shop.SetDialogMessage(shop.shopDialog.moreGold); return; }
+        if(!isAct) { shop.SetDialogMessage(shop.shopDialog.fail); return; }
+        GameManager.instance.gold -= price;
+        myLevel++;
+        isAct = player.ChangeStat(statId, value);
+        shop.SetDialogMessage(shop.shopDialog.buy);
+        UpToDateInfo();
     }
 }
