@@ -1,152 +1,151 @@
 {
-    "gems" : [
-        {
-            "gemId" : 0,
-            "nameColor" : "gray",
-            "textName" : "깨진 회로기판",
-            "textDesc" : "완전히 깨지고 망가져 작동하지 않는 회로기판 이다.",
-            "rating" : "common"
-        },
-        {
-            "gemId" : 1,
-            "nameColor" : "gray",
-            "textName" : "이빠진 톱니바퀴",
-            "textDesc" : "구동부에서 떨어진 톱니바퀴로, 군데 군데 이가 나가있다.",
-            "rating" : "common"
-        },
-        {
-            "gemId" : 2,
-            "nameColor" : "gray",
-            "textName" : "망가진 동력핵",
-            "textDesc" : "핵심부분이 흘러나와 더이상 작동하지 않는 동력핵이다.",
-            "rating" : "common"
-        },
-        {
-            "gemId" : 3,
-            "nameColor" : "silver",
-            "textName" : "고철 덩어리",
-            "textDesc" : "녹여 재사용 하기 좋게 묶여진 고철 한 뭉탱이이다.",
-            "rating" : "rare"
-        },
-        {
-            "gemId" : 4,
-            "nameColor" : "silver",
-            "textName" : "떨어져 나온 회로기판",
-            "textDesc" : "본체에서 떨어져 나왔지만 여전히 제 기능을 할 수 있는 회로기판이다.",
-            "rating" : "rare"
-        },
-        {
-            "gemId" : 5,
-            "nameColor" : "silver",
-            "textName" : "방전된 배터리",
-            "textDesc" : "방전된 상태 이지만 약간의 조치를 취하면 다시 사용 가능한 배터리 이다.",
-            "rating" : "rare"
-        },
-        {
-            "gemId" : 6,
-            "nameColor" : "white",
-            "textName" : "동력핵",
-            "textDesc" : "로봇의 동력부에 사용되는 동력핵이다. 아직 충전된 에너지가 남아있다.",
-            "rating" : "superRare"
-        },
-        {
-            "gemId" : 7,
-            "nameColor" : "white",
-            "textName" : "예비용 수리부품",
-            "textDesc" : "자가 수리가 가능한 로봇이 소지하고 다니는 예비용 수리부품이다.",
-            "rating" : "superRare"
-        },
-        {
-            "gemId" : 8,
-            "nameColor" : "white",
-            "textName" : "연료 보관용기",
-            "textDesc" : "반절쯤 연료가 남아있는 보관용기이다.",
-            "rating" : "superRare"
-        },
-        {
-            "gemId" : 9,
-            "nameColor" : "red",
-            "textName" : "권총 몸체",
-            "textDesc" : "FU-P2001을 제작 하는데 사용되는 부품이다.",
-            "rating" : "unique"
-        },
-        {
-            "gemId" : 10,
-            "nameColor" : "red",
-            "textName" : "고강도 탄력 스프링",
-            "textDesc" : "FU-P2001을 업그레이드 하는데 사용되는 부품이다.",
-            "rating" : "unique"
-        },
-        {
-            "gemId" : 11,
-            "nameColor" : "magenta",
-            "textName" : "노리쇠 뭉치",
-            "textDesc" : "Kaser-STE을 제작하는데 사용되는 부품이다.",
-            "rating" : "unique"
-        },
-        {
-            "gemId" : 12,
-            "nameColor" : "magenta",
-            "textName" : "반동제어 개머리판",
-            "textDesc" : "Kaser-STE을 업그레이드 하는데 사용되는 부품이다.",
-            "rating" : "unique"
-        },
-        {
-            "gemId" : 13,
-            "nameColor" : "lime",
-            "textName" : "빛 소자 생성장치",
-            "textDesc" : "Laser-Man777을 제작 하는데 사용되는 부품이다.",
-            "rating" : "unique"
-        },
-        {
-            "gemId" : 14,
-            "nameColor" : "lime",
-            "textName" : "광학 레이저 조리개",
-            "textDesc" : "Laser-Man777을 업그레이드 하는데 사용되는 부품이다.",
-            "rating" : "unique"
-        },
-        {
-            "gemId" : 15,
-            "nameColor" : "yellow",
-            "textName" : "지능형 레이저 모듈",
-            "textDesc" : "Chain-Lighting을 제작 하는데 사용되는 부품이다.",
-            "rating" : "unique"
-        },
-        {
-            "gemId" : 16,
-            "nameColor" : "yellow",
-            "textName" : "자동 대상 특정기",
-            "textDesc" : "Chain-Lighting을 업그레이드 하는데 사용되는 부품이다.",
-            "rating" : "unique"
-        },
-        {
-            "gemId" : 17,
-            "nameColor" : "lightblue",
-            "textName" : "고온 방출기",
-            "textDesc" : "LittleLighter2을 제작 하는데 사용되는 부품이다.",
-            "rating" : "unique"
-        },
-        {
-            "gemId" : 18,
-            "nameColor" : "lightblue",
-            "textName" : "엑스트라 연료 저장고",
-            "textDesc" : "LittleLighter2을 업그레이드 하는데 사용되는 부품이다.",
-            "rating" : "unique"
-        },
-        {
-            "gemId" : 19,
-            "nameColor" : "teal",
-            "textName" : "샷건 몸체",
-            "textDesc" : "MASTERKEY을 제작 하는데 사용되는 부품이다.",
-            "rating" : "unique"
-        },
-        {
-            "gemId" : 20,
-            "nameColor" : "teal",
-            "textName" : "산탄총 초크",
-            "textDesc" : "MASTERKEY을 업그레이드 하는데 사용되는 부품이다.",
-            "rating" : "unique"
-        }
-        
+    "gems": [
+    {
+    "gemId": 0,
+    "nameColor": "gray",
+    "textName": "Broken Circuit Board",
+    "textDesc": "Completely shattered and non-functional circuit board.",
+    "rating" : "common"
+    },
+    {
+    "gemId": 1,
+    "nameColor": "gray",
+    "textName": "Missing Gear",
+    "textDesc": "A gear that fell off from the drive mechanism, with teeth missing in several places.",
+    "rating" : "common"
+    },
+    {
+    "gemId": 2,
+    "nameColor": "gray",
+    "textName": "Malfunctioned Power Core",
+    "textDesc": "The core component is leaking, rendering the power core non-operational.",
+    "rating" : "common"
+    },
+    {
+    "gemId": 3,
+    "nameColor": "silver",
+    "textName": "Scrap Metal Chunk",
+    "textDesc": "A bundle of scrap metal tied together for easy recycling.",
+    "rating" : "rare"
+    },
+    {
+    "gemId": 4,
+    "nameColor": "silver",
+    "textName": "Detached Circuit Board",
+    "textDesc": "Separated from the main body but still a functioning circuit board.",
+    "rating" : "rare"
+    },
+    {
+    "gemId": 5,
+    "nameColor": "silver",
+    "textName": "Drained Battery",
+    "textDesc": "In a discharged state but can be reused with some minor adjustments.",
+    "rating" : "rare"
+    },
+    {
+    "gemId": 6,
+    "nameColor": "white",
+    "textName": "Power Core",
+    "textDesc": "A power core used in robot power units. It still has remaining energy.",
+    "rating" : "superRare"
+    },
+    {
+    "gemId": 7,
+    "nameColor": "white",
+    "textName": "Spare Repair Parts",
+    "textDesc": "Self-repairable robot carries these spare repair parts.",
+    "rating" : "superRare"
+    },
+    {
+    "gemId": 8,
+    "nameColor": "white",
+    "textName": "Fuel Storage Container",
+    "textDesc": "A storage container with about half of the fuel remaining.",
+    "rating" : "superRare"
+    },
+    {
+    "gemId": 9,
+    "nameColor": "red",
+    "textName": "Pistol Frame",
+    "textDesc": "A component used to create FU-P2001.",
+    "rating" : "unique"
+    },
+    {
+    "gemId": 10,
+    "nameColor": "red",
+    "textName": "High-Strength Recoil Spring",
+    "textDesc": "A component used to upgrade FU-P2001.",
+    "rating" : "unique"
+    },
+    {
+    "gemId": 11,
+    "nameColor": "magenta",
+    "textName": "Firing Pin Bundle",
+    "textDesc": "A component used to create Kaser-STE.",
+    "rating" : "unique"
+    },
+    {
+    "gemId": 12,
+    "nameColor": "magenta",
+    "textName": "Recoil Control Brainplate",
+    "textDesc": "A component used to upgrade Kaser-STE.",
+    "rating" : "unique"
+    },
+    {
+    "gemId": 13,
+    "nameColor": "lime",
+    "textName": "Light Component Generator",
+    "textDesc": "A component used to create Laser-Man777.",
+    "rating" : "unique"
+    },
+    {
+    "gemId": 14,
+    "nameColor": "lime",
+    "textName": "Optical Laser Diaphragm",
+    "textDesc": "A component used to upgrade Laser-Man777.",
+    "rating" : "unique"
+    },
+    {
+    "gemId": 15,
+    "nameColor": "yellow",
+    "textName": "Intelligent Laser Module",
+    "textDesc": "A component used to create Chain-Lighting.",
+    "rating" : "unique"
+    },
+    {
+    "gemId": 16,
+    "nameColor": "yellow",
+    "textName": "Automatic Targeting Device",
+    "textDesc": "A component used to upgrade Chain-Lighting.",
+    "rating" : "unique"
+    },
+    {
+    "gemId": 17,
+    "nameColor": "lightblue",
+    "textName": "High-Temperature Emitter",
+    "textDesc": "A component used to create LittleLighter2.",
+    "rating" : "unique"
+    },
+    {
+    "gemId": 18,
+    "nameColor": "lightblue",
+    "textName": "Extra Fuel Storage",
+    "textDesc": "A component used to upgrade LittleLighter2.",
+    "rating" : "unique"
+    },
+    {
+    "gemId": 19,
+    "nameColor": "teal",
+    "textName": "Shotgun Body",
+    "textDesc": "A component used to create MASTERKEY.",
+    "rating" : "unique"
+    },
+    {
+    "gemId": 20,
+    "nameColor": "teal",
+    "textName": "Shotgun Choke",
+    "textDesc": "A component used to upgrade MASTERKEY.",
+    "rating" : "unique"
+    }
     ]
     }

@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 /*상점 아이템 섹션*/
 [System.Serializable]
@@ -309,23 +308,23 @@ public class JsonDataLoader : MonoBehaviour
 
     public void LoadShopItemData(string language)
     {
-        string filePath = Application.dataPath + "/Resources/localization/ShopItemData_" + language + ".json";
-        string jsonContent = File.ReadAllText(filePath);
+        string filePath = "localization/ShopItemData_" + language;
+        string jsonContent = Resources.Load<TextAsset>(filePath).ToString();
         ItemDatabase list = JsonUtility.FromJson<ItemDatabase>(jsonContent);
         shopItemDataList = list.items;
         shopSellItemDataList = list.sellItems;
     }
     public void LoadDropItemData(string language)
     {
-        string filePath = Application.dataPath + "/Resources/localization/DropItemData_" + language + ".json";
-        string jsonContent = File.ReadAllText(filePath);
+        string filePath = "localization/DropItemData_" + language;
+        string jsonContent = Resources.Load<TextAsset>(filePath).ToString();
         DropItemDatabase list = JsonUtility.FromJson<DropItemDatabase>(jsonContent);
         gemDataList = list.gems;
     }
     public void LoadShopDialog(string language)
     {
-        string filePath = Application.dataPath + "/Resources/localization/ShopDialog_" + language + ".json";
-        string jsonContent = File.ReadAllText(filePath);
+        string filePath = "localization/ShopDialog_" + language;
+        string jsonContent = Resources.Load<TextAsset>(filePath).ToString();
         ShopDialogDatas datas = JsonUtility.FromJson<ShopDialogDatas>(jsonContent);
         shopDialog = datas.shop;
         blacksmithDialog = datas.blackSmith;
@@ -333,8 +332,8 @@ public class JsonDataLoader : MonoBehaviour
     }
     public void LoadWeaponLevelUpDesc(string language)
     {
-        string filePath = Application.dataPath + "/Resources/localization/WeaponLevelUpDesc_" + language + ".json";
-        string jsonContent = File.ReadAllText(filePath);
+        string filePath = "localization/WeaponLevelUpDesc_" + language;
+        string jsonContent = Resources.Load<TextAsset>(filePath).ToString();
         WeaponLevelUpDesc list = JsonUtility.FromJson<WeaponLevelUpDesc>(jsonContent);
         Pistol_levelUpDesc = list.pistol[0];
         Ak47_levelUpDesc = list.ak47[0];
@@ -345,8 +344,8 @@ public class JsonDataLoader : MonoBehaviour
     }
     public void LoadAlert(string language)
     {
-        string filePath = Application.dataPath + "/Resources/localization/Alert_" + language + ".json";
-        string jsonContent = File.ReadAllText(filePath);
+        string filePath = "localization/Alert_" + language;
+        string jsonContent = Resources.Load<TextAsset>(filePath).ToString();
         AlertDataList datas = JsonUtility.FromJson<AlertDataList>(jsonContent);
         popUpAlert = datas.popUp;
         hintAlert = datas.hint;
@@ -355,50 +354,50 @@ public class JsonDataLoader : MonoBehaviour
     //현지화가 필요 없는 부분
     public void LoadPistolLevelUpData()
     {
-        string filePath = Application.dataPath + "/Resources/weaponData/PistolLevelUpData.json";
-        string jsonContent = File.ReadAllText(filePath);
+        string filePath = "weaponData/PistolLevelUpData";
+        string jsonContent = Resources.Load<TextAsset>(filePath).ToString();
         PistolLevelUpDataList list = JsonUtility.FromJson<PistolLevelUpDataList>(jsonContent);
         Pistol_levelUpDataList = list.levelDatas;
     }
     public void LoadAk47LevelUpData()
     {
-        string filePath = Application.dataPath + "/Resources/weaponData/Ak47LevelUpData.json";
-        string jsonContent = File.ReadAllText(filePath);
+        string filePath = "weaponData/Ak47LevelUpData";
+        string jsonContent = Resources.Load<TextAsset>(filePath).ToString();
         Ak47LevelUpDataList list = JsonUtility.FromJson<Ak47LevelUpDataList>(jsonContent);
         Ak47_levelUpDataList = list.levelDatas;
     }
     public void LoadLaserGunLevelUpData()
     {
-        string filePath = Application.dataPath + "/Resources/weaponData/LaserGunLevelUpData.json";
-        string jsonContent = File.ReadAllText(filePath);
+        string filePath = "weaponData/LaserGunLevelUpData";
+        string jsonContent = Resources.Load<TextAsset>(filePath).ToString();
         LaserGunLevelUpDataList list = JsonUtility.FromJson<LaserGunLevelUpDataList>(jsonContent);
         LaserGun_levelUpDataList = list.levelDatas;
     }
     public void LoadChainGunLevelUpData()
     {
-        string filePath = Application.dataPath + "/Resources/weaponData/ChainGunLevelUpData.json";
-        string jsonContent = File.ReadAllText(filePath);
+        string filePath = "weaponData/ChainGunLevelUpData";
+        string jsonContent = Resources.Load<TextAsset>(filePath).ToString();
         ChainGunLevelUpDataList list = JsonUtility.FromJson<ChainGunLevelUpDataList>(jsonContent);
         ChainGun_levelUpDataList = list.levelDatas;
     }
     public void LoadFireGunLevelUpData()
     {
-        string filePath = Application.dataPath + "/Resources/weaponData/FireGunLevelUpData.json";
-        string jsonContent = File.ReadAllText(filePath);
+        string filePath = "weaponData/FireGunLevelUpData";
+        string jsonContent = Resources.Load<TextAsset>(filePath).ToString();
         FireGunLevelUpDataList list = JsonUtility.FromJson<FireGunLevelUpDataList>(jsonContent);
         FireGun_levelUpDataList = list.levelDatas;
     }
     public void LoadShotGunLevelUpData()
     {
-        string filePath = Application.dataPath + "/Resources/weaponData/ShotGunLevelUpData.json";
-        string jsonContent = File.ReadAllText(filePath);
+        string filePath = "weaponData/ShotGunLevelUpData";
+        string jsonContent = Resources.Load<TextAsset>(filePath).ToString();
         ShotGunLevelUpDataList list = JsonUtility.FromJson<ShotGunLevelUpDataList>(jsonContent);
         ShotGun_levelUpDataList = list.levelDatas;
     }
     public void LoadMonsterData()
     {
-        string filePath = Application.dataPath + "/Resources/MonsterData/MonsterData.json";
-        string jsonContent = File.ReadAllText(filePath);
+        string filePath = "MonsterData/MonsterData";
+        string jsonContent = Resources.Load<TextAsset>(filePath).ToString();
         MonsterDataList list = JsonUtility.FromJson<MonsterDataList>(jsonContent);
         monsterDatas = list.monsterDatas;
         bossDatas = list.bossDatas;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 #if UNITY_EDITOR
 using UnityEditor.SearchService;
 #endif
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [Header("# 게임 컨트롤")]
     //게임 설정
+    public int screenWidth;
+    public int screenHeight;
     public float game_time;
     public int gameLevel = 1;
     public float levelUpTime;
@@ -19,6 +22,7 @@ public class GameManager : MonoBehaviour
     public string language = "kor";
     public bool showHint = true;
     public bool isLive;
+    public bool isGamestart;
 
     [Header("# 게임 자산")]
     public int score = 0;
@@ -30,6 +34,7 @@ public class GameManager : MonoBehaviour
     [Header("# 글로벌 오브젝트 연결용")]
     public Canvas canvas;
     public PoolManager pool;
+    public GameObject playerIntro;
     public Player player;
     public Shop shop;
     public Shop blacksmith;
@@ -49,20 +54,27 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-
+        CameraFixed(screenWidth, screenHeight);
+        Application.targetFrameRate = 60;
         AlertUIActivateAll();
         jsonLoader = GetComponent<JsonDataLoader>();
         jsonLoader.Init(language);
+        shopResetTIme = shopResetTimeMax;
+    }
+
+    public void CameraFixed(int width, int height)
+    {
+
+        
     }
 
     public void GameStart()
     {
         //임시
+        isGamestart = true;
         GameResume();
-        player.InitializedWeapons();
+        playerIntro.SetActive(true);
         gameLevel = 1;
-        AudioManager.instance.PlayBgm(true);
-        AudioManager.instance.PlaySfx(AudioManager.SFX.Select);
     }
 
     public void GameOver()
@@ -134,7 +146,10 @@ public class GameManager : MonoBehaviour
             CloseAllUI();
         }
 
-        shopResetTIme -= Time.unscaledDeltaTime;
+        if (isGamestart)
+        {
+            shopResetTIme -= Time.unscaledDeltaTime;
+        }
         if (shopResetTIme < 0)
         {
             if(shop.gameObject.activeSelf == false)
@@ -283,6 +298,7 @@ public class GameManager : MonoBehaviour
 
     public void GameResume()
     {
+        if (!isGamestart) { return; }
         isLive = true;
         Time.timeScale = 1;
         joystick.localScale = Vector3.one * 2.5f;

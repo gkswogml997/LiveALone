@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
-using UnityEditor.Searcher;
 using UnityEngine.InputSystem;
 using UnityEngine;
 
@@ -86,10 +85,6 @@ public class Player : MonoBehaviour
         //exception
         if (!GameManager.instance.isLive) { return; }
 
-        //마우스포인트 조정
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        aimPointer.SetMousePosition(mousePos);
-
         //act
         //무기 바꾸기
         if (Input.GetKeyDown(KeyCode.Alpha1)) { SwitchWeapon(equipmentWeaponNumber - 1); }
@@ -123,7 +118,12 @@ public class Player : MonoBehaviour
 
         //act
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        aimPointer.SetMousePosition(mousePos);
+        if (Input.GetMouseButton(0) && Vector2.Distance(transform.position, mousePos) > 15)
+        {
+            aimPointer.SetMousePosition(mousePos);
+        }
+        else { aimPointer.SetMousePosition(Vector2.zero); }
+        
     }
 
     void LateUpdate()
@@ -193,10 +193,8 @@ public class Player : MonoBehaviour
     {
         foreach (Weapon weapon in equipmentWeaponList)
         {
-            Debug.Log(weapon.weaponName + "초기화 작업중");
             weapon.SwitchWeapon(false);
         }
-        Debug.Log(equipmentWeaponList[equipmentWeaponNumber].weaponName + "초기화 완료후 활성화");
         equipmentWeaponList[equipmentWeaponNumber].SwitchWeapon(true);
         equipmentWeaponList[equipmentWeaponNumber].LevelUp();
     }

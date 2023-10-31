@@ -24,7 +24,7 @@
             "weaponDesc" : "지정한 목표까지 일직선으로 뻗으며 광역 피해를 입히는 레이저를 발사한다.",
             "damage" : "공격 계수 {0} 증가",
             "speed" : "공격딜레이 {0} 감소",
-            "laserWidth" : "레이저 두께 {0} 증가"
+            "laserWidth" : "레이저 지속시간 {0} 증가"
         }
     ],
     "chainGun" :[
@@ -34,7 +34,7 @@
             "damage" : "공격 계수 {0} 증가",
             "speed" : "공격딜레이 {0} 감소",
             "targetNumber" : "전이 대상 {0} 증가",
-            "targetDir" : "대상으로 전이 할때 하나의 추가 대상으로 전이합니다."
+            "targetDir" : "전이 사거리 {0} 증가."
         }
     ],
     "fireGun" :[
@@ -42,8 +42,8 @@
             "weaponName" : "LittleLighter2",
             "weaponDesc" : "짧은 거리에 화염을 흩뿌리는 화염방사기",
             "damage" : "공격 계수 {0} 증가",
-            "range" : "범위 {0} 증가",
-            "dotDamage" : "화염 지속 데미지 {0} 증가"
+            "range" : "공격 딜레이 {0} 감소",
+            "dotDamage" : " {0} "
         }
     ],
     "shotGun" :[

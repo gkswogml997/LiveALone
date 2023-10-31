@@ -1,58 +1,58 @@
 {
-    "pistol" :[
+    "pistol": [
         {
-            "weaponName" : "FU-P2001",
-            "weaponDesc" : "한방 한방 묵직한 열화 우라늄 탄을 꽂아 넣는 강력한 권총이다.",
-            "damage" : "공격 계수 {0} 증가",
-            "speed" : "공격딜레이 {0} 감소"
+            "weaponName": "FU-P2001",
+            "weaponDesc": "A powerful pistol that loads hefty uranium bullets, causing significant damage with each shot.",
+            "damage": "Increases attack coefficient by {0}",
+            "speed": "Reduces attack delay by {0}"
         }
     ],
-    "ak47" :[
+    "ak47": [
         {
-            "weaponName" : "Kaser-STE",
-            "weaponDesc" : "짧은 간격으로 여러번 점사하여 빠르게 피해를 누적시키는 점사 소총이다.",
-            "damage" : "공격 계수 {0} 증가",
-            "per" : "관통력 {0} 증가",
-            "speed" : "공격딜레이 {0} 감소",
-            "fireRate" : "점사 간격 {0} 감소",
-            "fireCount" : "발사횟수 {0} 증가"
+            "weaponName": "Kaser-STE",
+            "weaponDesc": "A semi-automatic rifle that rapidly accumulates damage with short intervals between shots.",
+            "damage": "Increases attack coefficient by {0}",
+            "per": "Increases penetration power by {0}",
+            "speed": "Reduces attack delay by {0}",
+            "fireRate": "Reduces shot interval by {0}",
+            "fireCount": "Increases number of shots by {0}"
         }
     ],
-    "laserGun" :[
+    "laserGun": [
         {
-            "weaponName" : "Laser-Man777",
-            "weaponDesc" : "지정한 목표까지 일직선으로 뻗으며 광역 피해를 입히는 레이저를 발사한다.",
-            "damage" : "공격 계수 {0} 증가",
-            "speed" : "공격딜레이 {0} 감소",
-            "laserWidth" : "레이저 지속시간 {0} 증가"
+            "weaponName": "Laser-Man777",
+            "weaponDesc": "Fires a laser in a straight line to the designated target, dealing widespread damage.",
+            "damage": "Increases attack coefficient by {0}",
+            "speed": "Reduces attack delay by {0}",
+            "laserWidth": "Increases laser duration by {0}"
         }
     ],
-    "chainGun" :[
+    "chainGun": [
         {
-            "weaponName" : "Chain-Lighting",
-            "weaponDesc" : "대상과 그 이후 대상에게 차래대로 전이되는 레이저를 발사한다.",
-            "damage" : "공격 계수 {0} 증가",
-            "speed" : "공격딜레이 {0} 감소",
-            "targetNumber" : "전이 대상 {0} 증가",
-            "targetDir" : "전이 사거리 {0} 증가."
+            "weaponName": "Chain-Lighting",
+            "weaponDesc": "Fires a laser that transfers sequentially to targets and subsequent targets.",
+            "damage": "Increases attack coefficient by {0}",
+            "speed": "Reduces attack delay by {0}",
+            "targetNumber": "Increases number of transfer targets by {0}",
+            "targetDir": "Increases transfer range by {0}"
         }
     ],
-    "fireGun" :[
+    "fireGun": [
         {
-            "weaponName" : "LittleLighter2",
-            "weaponDesc" : "짧은 거리에 화염을 흩뿌리는 화염방사기",
-            "damage" : "공격 계수 {0} 증가",
-            "range" : "공격 딜레이 {0} 감소",
-            "dotDamage" : "화염 지속 데미지 {0} 증가"
+            "weaponName": "LittleLighter2",
+            "weaponDesc": "A flamethrower that scatters flames at short range.",
+            "damage": "Increases attack coefficient by {0}",
+            "range": "Reduces attack delay by {0}",
+            "dotDamage": "Increases {0} in flame duration"
         }
     ],
-    "shotGun" :[
+    "shotGun": [
         {
-            "weaponName" : "MASTERKEY",
-            "weaponDesc" : "한번에 여러개의 총알을 발사하여 가까울수록 큰 데미지를 입힌다.",
-            "damage" : "공격 계수 {0} 증가",
-            "range" : "탄막 범위 {0} 감소",
-            "bulletNumber" : "펠릿 {0}개 증가"
+            "weaponName": "MASTERKEY",
+            "weaponDesc": "Fires multiple bullets at once, dealing greater damage at close range.",
+            "damage": "Increases attack coefficient by {0}",
+            "range": "Reduces bullet spread by {0}",
+            "bulletNumber": "Increases pellets by {0}"
         }
     ]
-    }
+}

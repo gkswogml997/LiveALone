@@ -29,17 +29,6 @@ public class AimPointer : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
-    {
-        /*mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButton(0)) { 
-            manualAiming = true;
-            targetPosition = mousePos;
-        }
-        else { manualAiming = false; }*/
-        
-    }
-
     private void Update()
     {
         if (manualAiming)
@@ -64,12 +53,13 @@ public class AimPointer : MonoBehaviour
 
         Vector3[] pos = { transform.position, weaponFirePos };
         lineRenderer.SetPositions(pos);
-
     }
     
     public void SetMousePosition(Vector2 pos)
     {
-        mousePos = pos;
-        Debug.Log("마우스 위치 전달받음");
+        if (pos == Vector2.zero) { mousePos = weaponFirePos; manualAiming = false; }
+        else { mousePos = pos; manualAiming = true; }
+        
+
     }
 }

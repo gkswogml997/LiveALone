@@ -37,7 +37,7 @@ public class ShopItem : MonoBehaviour
 
     public void UpToDateInfo()
     {
-        price = 100 * myLevel;
+        price = 50 + (10 * myLevel);
 
         shopItemData = GameManager.instance.jsonLoader.shopItemDataList[itemId];
         shopItemSprite = GameManager.instance.jsonLoader.shopItemSpriteList[itemId];

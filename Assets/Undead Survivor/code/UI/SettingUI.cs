@@ -9,6 +9,7 @@ public class SettingUI : MonoBehaviour
     Slider bgmVolumeBar;
     Slider seVolumeBar;
     Toggle showHintToggle;
+    Dropdown localization;
 
     public bool isOpen = false;
 
@@ -17,10 +18,12 @@ public class SettingUI : MonoBehaviour
         bgmVolumeBar = GetComponentsInChildren<Slider>()[0];
         seVolumeBar = GetComponentsInChildren<Slider>()[1];
         showHintToggle = GetComponentInChildren<Toggle>();
+        localization = GetComponentInChildren<Dropdown>();
 
         bgmVolumeBar.onValueChanged.AddListener(bgmVolumeChange);
         seVolumeBar.onValueChanged.AddListener(seVolumeChange);
         showHintToggle.onValueChanged.AddListener(ToggleSwitch);
+        localization.onValueChanged.AddListener(LanguageChange);
     }
 
     public void Show()
@@ -56,5 +59,20 @@ public class SettingUI : MonoBehaviour
     void ToggleSwitch(bool value)
     {
         GameManager.instance.showHint = value;
+    }
+
+    void LanguageChange(int value)
+    {
+        switch (value)
+        {
+            case 0:
+                GameManager.instance.language = "kor";
+                GameManager.instance.jsonLoader.Init("kor");
+                break;
+            case 1:
+                GameManager.instance.language = "eng";
+                GameManager.instance.jsonLoader.Init("eng");
+                break;
+        }
     }
 }
