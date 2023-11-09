@@ -51,10 +51,16 @@ public class MonsterSpawner : MonoBehaviour
         timer += Time.deltaTime;
         bossTimer += Time.deltaTime;
 
-        if (timer > 1)
+        float maxTimer = 1 - GameManager.instance.gameLevel / 10;
+        if (maxTimer < 0.25f) { maxTimer = 0.25f; }
+
+        if (timer > maxTimer)
         {
             timer = 0f;
             Spawn();
+            if (GameManager.instance.gameLevel > 5) { Spawn(); }
+            if (GameManager.instance.gameLevel > 10) { Spawn(); }
+            if (GameManager.instance.gameLevel > 15) { Spawn(); }
         }
 
         if (bossTimer > 60)

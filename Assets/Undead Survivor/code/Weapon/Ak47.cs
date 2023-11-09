@@ -45,8 +45,9 @@ public class Ak47 : Weapon
         {
             if (!isShooting && !isReloading)
             {
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButton(0) && isInRange)
                 {
+                    
                     StartCoroutine(Shoot());
                     timer = 0;
                 }
@@ -111,7 +112,7 @@ public class Ak47 : Weapon
         firePosTransform.GetComponent<FireEffect>().StartFireEffect();
         PublishFireEvent(bulletCount);
 
-        AudioManager.instance.PlaySfx(AudioManager.SFX.Range);
+        AudioManager.instance.PlaySfx(AudioManager.SFX.Rifle);
     }
 
     public override string LevelUpDesc()

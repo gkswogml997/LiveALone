@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour
     public int maxBulletCount;
     public float reloadingTime;
     public float reloadingTimeMax;
+    public bool isInRange = false;
     public bool isShooting = false;
     public bool isReloading = false;
     public bool autoFire = true;
@@ -67,6 +68,7 @@ public class Weapon : MonoBehaviour
         bulletCount = maxBulletCount;
         if(player.bigMagazine) { bulletCount = maxBulletCount*2; }
         reloadingTime = 0;
+        AudioManager.instance.PlaySfx(AudioManager.SFX.Land);
         PublishReloadingEvent();
         isReloading = false;
     }

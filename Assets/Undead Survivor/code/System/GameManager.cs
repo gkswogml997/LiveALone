@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public int kill = 0;
     public int gold = 0;
-    public float goldGrid = 1;
-    public float dropGrid = 1;
+    public float goldGrid = 100;
+    public float dropGrid = 100;
 
     [Header("# 글로벌 오브젝트 연결용")]
     public Canvas canvas;
@@ -64,8 +64,9 @@ public class GameManager : MonoBehaviour
 
     public void CameraFixed(int width, int height)
     {
-
-        
+        Debug.Log(Screen.currentResolution);
+        Screen.SetResolution(width, height,true);
+        Debug.Log(Screen.currentResolution);
     }
 
     public void GameStart()
@@ -93,8 +94,6 @@ public class GameManager : MonoBehaviour
         uiResult.Lose();
         GameStop();
 
-        AudioManager.instance.PlayBgm(false);
-        AudioManager.instance.PlaySfx(AudioManager.SFX.Lose);
     }
 
     public void GameVictory()
@@ -139,7 +138,7 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            popupAlert.InsertAlertQueue("테스트", "사이드업 알람 테스트 입니다.");
+            
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -188,6 +187,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void CheatMode()
+    {
+        popupAlert.InsertAlertQueue("치트모드", "인벤토리를 확인해보세요!");
+        for (int i = 0; i <= 20; i++)
+        {
+            player.InventoryAdd(i, 100);
+        }
+    }
     public void OpenInventory()
     {
         if (!IsUIOpen()) {

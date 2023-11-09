@@ -43,8 +43,9 @@ public class ChainGun : Weapon
         {
             if (!isShooting && !isReloading)
             {
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButton(0) && isInRange)
                 {
+                    
                     if (bulletCount > 0 && !isShooting) { Fire(); bulletCount--; }
                     timer = 0;
                 }
@@ -93,7 +94,7 @@ public class ChainGun : Weapon
 
         PublishFireEvent(bulletCount);
 
-        AudioManager.instance.PlaySfx(AudioManager.SFX.Range);
+        AudioManager.instance.PlaySfx(AudioManager.SFX.Laser);
     }
 
     public override string LevelUpDesc()
@@ -149,7 +150,7 @@ public class ChainGun : Weapon
                     damage += levelData.damageRise;
                     speed -= levelData.speedRise;
                     shiftLife += levelData.targetNumber;
-                    shiftRange = levelData.targetDir;
+                    shiftRange += levelData.targetDir;
                 }
                 
             }

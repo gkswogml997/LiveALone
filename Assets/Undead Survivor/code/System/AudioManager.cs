@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
     AudioSource[] sfxPlayers;
     int channelIndex;
 
-    public enum SFX { Dead, Hit, LevelUp=3, Lose, Melee, Range=7, Select, Win }
+    public enum SFX { Dead, Hit, LevelUp=3, Lose, Melee, Range=7, Select, Win,Land,Reload,FlameThrower, Laser,Pistol,Rifle,ShotGun }
 
     private void Awake()
     {

@@ -42,8 +42,9 @@ public class ShotGun : Weapon
         {
             if (!isShooting && !isReloading)
             {
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButton(0) && isInRange)
                 {
+                    
                     if (bulletCount > 0 && !isShooting) { StartCoroutine(ShotgunFire()); bulletCount--; }
                     timer = 0;
                 }
@@ -102,12 +103,11 @@ public class ShotGun : Weapon
     IEnumerator ShotgunFire()
     {
         isShooting = true;
-        PublishFireEvent(bulletCount);
-        AudioManager.instance.PlaySfx(AudioManager.SFX.Range);
+        PublishFireEvent(bulletCount); 
+        AudioManager.instance.PlaySfx(AudioManager.SFX.ShotGun);
         bulletCount = (int)bulletNumber;
         while (bulletCount > 0)
         {
-            Fire();
             Fire();
             bulletCount--;
             yield return new WaitForFixedUpdate();

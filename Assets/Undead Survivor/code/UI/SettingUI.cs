@@ -29,7 +29,7 @@ public class SettingUI : MonoBehaviour
     public void Show()
     {
         bgmVolumeBar.value = AudioManager.instance.bgmVolume;
-        seVolumeBar.value = AudioManager.instance.bgmVolume;
+        seVolumeBar.value = AudioManager.instance.sfxVolume;
         showHintToggle.isOn = GameManager.instance.showHint;
         GameManager.instance.GameStop();
         isOpen = true;

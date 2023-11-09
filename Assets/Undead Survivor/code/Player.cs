@@ -74,12 +74,6 @@ public class Player : MonoBehaviour
         vec_input = value.Get<Vector2>();
     }
 
-    private void OnTouchPosition(InputAction.CallbackContext context)
-    {
-        Debug.Log("마우스 위치 받는중");
-        Vector2 touchPosition = context.ReadValue<Vector2>();
-        aimPointer.SetMousePosition(touchPosition);
-    }
     void FixedUpdate()
     {
         //exception
@@ -117,12 +111,7 @@ public class Player : MonoBehaviour
         if (!GameManager.instance.isLive) { return; }
 
         //act
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButton(0) && Vector2.Distance(transform.position, mousePos) > 15)
-        {
-            aimPointer.SetMousePosition(mousePos);
-        }
-        else { aimPointer.SetMousePosition(Vector2.zero); }
+        
         
     }
 
@@ -179,7 +168,7 @@ public class Player : MonoBehaviour
     public void Hit(float damage)
     {
         float realDamage = (damage - defencePower);
-        if (realDamage <= 0) { return; }
+        if (realDamage <= 0) { realDamage = 0.1f; }
         hp -= realDamage;
         if (hp <= 0)
         {
@@ -220,10 +209,10 @@ public class Player : MonoBehaviour
                 goldGainRange *= (value + 100) / 100;
                 break;
             case ShopItem.InfoType.GoldGrid:
-                GameManager.instance.goldGrid += (value + 100) / 100;
+                GameManager.instance.goldGrid += value;
                 break;
             case ShopItem.InfoType.DropGrid:
-                GameManager.instance.dropGrid += (value + 100) / 100;
+                GameManager.instance.dropGrid += value;
                 break;
             case ShopItem.InfoType.Speed:
                 if (speed >= 14) { speed += value; return false; }

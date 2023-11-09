@@ -89,11 +89,13 @@ public class Gold : MonoBehaviour
 
     public void Init(int value, bool uniqueCheck)
     {
+        itemId = 0;
+        isGem = false;
         isConfirmedUnique = uniqueCheck;
         //보석 인지 아닌지
         int randomNumber = Random.Range(1, 101);
 
-        if (randomNumber <= 10 || isConfirmedUnique)
+        if (randomNumber <= 10 * GameManager.instance.dropGrid/100 || isConfirmedUnique)
         {
             CreateGem();
         }
@@ -191,7 +193,7 @@ public class Gold : MonoBehaviour
     {
         if (!isGem)
         { 
-            GameManager.instance.gold += goldValue;
+            GameManager.instance.gold += (int)(goldValue * GameManager.instance.goldGrid/100);
             goldValue = 0;
         }
         else

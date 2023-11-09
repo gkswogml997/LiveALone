@@ -27,6 +27,7 @@ public class PlayerIntro : MonoBehaviour
     IEnumerator GameStartRoutin()
     {
         sprite.sprite = standSpr;
+        AudioManager.instance.PlaySfx(AudioManager.SFX.Land);
         yield return new WaitForSecondsRealtime(1);
         sprite.flipX = true;
         yield return new WaitForSecondsRealtime(0.5f);

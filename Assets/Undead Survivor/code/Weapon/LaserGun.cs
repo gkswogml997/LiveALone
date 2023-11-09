@@ -47,8 +47,9 @@ public class LaserGun : Weapon
         {
             if (!isShooting && !isReloading)
             {
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButton(0) && isInRange)
                 {
+                    
                     if (bulletCount > 0 && !isShooting) { StartCoroutine(LaserFire()); bulletCount--; }
                     timer = 0;
                 }
@@ -113,7 +114,7 @@ public class LaserGun : Weapon
         isShooting = true;
         lineRenderer.enabled = true;
         PublishFireEvent(bulletCount);
-        AudioManager.instance.PlaySfx(AudioManager.SFX.Range);
+        AudioManager.instance.PlaySfx(AudioManager.SFX.Laser);
         float laserLife = 0;
         while(laserLife < laserWidth) {
             Fire();

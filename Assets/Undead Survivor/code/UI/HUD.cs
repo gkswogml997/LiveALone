@@ -31,7 +31,7 @@ public class HUD : MonoBehaviour
                 myText.text = GameManager.instance.gold+"G";
                 break;
             case InfoType.Kill:
-                myText.text = string.Format("{0:F0}", GameManager.instance.kill);
+                myText.text = string.Format("{0:F0}", GameManager.instance.score);
                 break;
             case InfoType.Time:
                 float remein_time = GameManager.instance.game_time;

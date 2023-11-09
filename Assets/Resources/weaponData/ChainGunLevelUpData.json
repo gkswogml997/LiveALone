@@ -3,28 +3,28 @@
         {
             "level" : 1,
             "damageRise" : 1,
-            "speedRise" : 2,
+            "speedRise" : 1,
             "targetNumber" : 2,
             "targetDir" : 10
         },
         {
             "level" : 2,
             "damageRise" : 0,
-            "speedRise" : 0.4,
+            "speedRise" : 0.2,
             "targetNumber" : 1,
             "targetDir" : 1
         },
         {
             "level" : 3,
             "damageRise" : 1,
-            "speedRise" : 0.4,
+            "speedRise" : 0.2,
             "targetNumber" : 1,
             "targetDir" : 1
         },
         {
             "level" : 4,
             "damageRise" : 0,
-            "speedRise" : 0.4,
+            "speedRise" : 0.2,
             "targetNumber" : 1,
             "targetDir" : 1
         },

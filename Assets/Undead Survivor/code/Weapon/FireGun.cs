@@ -42,8 +42,9 @@ public class FireGun : Weapon
         {
             if (!isShooting && !isReloading)
             {
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButton(0) && isInRange)
                 {
+                    
                     if (bulletCount > 0 && !isShooting) { StartCoroutine(FireFire()); bulletCount--; }
                     timer = 0;
                 }
@@ -76,7 +77,7 @@ public class FireGun : Weapon
         weaponDesc = levelUpText.weaponDesc;
         level = 0;
         maxLevel = levelUpDataList.Count;
-        maxBulletCount = 5;
+        maxBulletCount = 1;
         bulletCount = maxBulletCount;
         reloadingTime = 0;
         reloadingTimeMax = 0.5f;
@@ -100,8 +101,7 @@ public class FireGun : Weapon
     IEnumerator FireFire()
     {
         isShooting = true;
-        PublishFireEvent(bulletCount);
-        AudioManager.instance.PlaySfx(AudioManager.SFX.Range);
+        AudioManager.instance.PlaySfx(AudioManager.SFX.FlameThrower);
         bulletCount = fireCount;
         while (bulletCount > 0)
         {

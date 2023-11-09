@@ -3,32 +3,32 @@
         {
             "level" : 1,
             "damageRise" : 1,
-            "range" : 5,
-            "bulletNumber" : 1
+            "range" : 1,
+            "bulletNumber" : 5
         },
         {
             "level" : 2,
             "damageRise" : 1,
-            "range" : 5,
-            "bulletNumber" : 1
+            "range" : 0.2,
+            "bulletNumber" : 2
         },
         {
             "level" : 3,
             "damageRise" : 1,
-            "range" : 5,
-            "bulletNumber" : 1
+            "range" : 0.2,
+            "bulletNumber" : 3
         },
         {
             "level" : 4,
             "damageRise" : 1,
-            "range" : 5,
-            "bulletNumber" : 1
+            "range" : 0.2,
+            "bulletNumber" : 4
         },
         {
             "level" : 5,
             "damageRise" : 1,
-            "range" : 5,
-            "bulletNumber" : 1
+            "range" : 0,
+            "bulletNumber" : 5
         }
     ]
     }

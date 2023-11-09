@@ -4,8 +4,8 @@
             "level" : 1,
             "damageRise" : 3,
             "perRise" : 1,
-            "speedRise" : 1.5,
-            "fireRateRise" : 0.2,
+            "speedRise" : 1,
+            "fireRateRise" : 0.1,
             "fireCountRise" : 3
         },
         {
@@ -13,23 +13,23 @@
             "damageRise" : 0,
             "perRise" : 1,
             "speedRise" : 0.2,
-            "fireRateRise" : 0.04,
+            "fireRateRise" : 0.02,
             "fireCountRise" : 0
         },
         {
             "level" : 3,
             "damageRise" : 0,
             "perRise" : 0,
-            "speedRise" : 0.2,
-            "fireRateRise" : 0.04,
+            "speedRise" : 0.1,
+            "fireRateRise" : 0.02,
             "fireCountRise" : 1
         },
         {
             "level" : 4,
             "damageRise" : 0,
             "perRise" : 0,
-            "speedRise" : 0.2,
-            "fireRateRise" : 0.04,
+            "speedRise" : 0.1,
+            "fireRateRise" : 0.02,
             "fireCountRise" : 0
         },
         {
@@ -37,7 +37,7 @@
             "damageRise" : 1,
             "perRise" : 1,
             "speedRise" : 0.2,
-            "fireRateRise" : 0.04,
+            "fireRateRise" : 0.02,
             "fireCountRise" : 1
         }
     ]

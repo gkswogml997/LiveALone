@@ -3,32 +3,32 @@
         {
             "level" : 1,
             "damageRise" : 1,
-            "range" : 5,
-            "dotDamage" : 1
+            "range" : 0,
+            "dotDamage" : 0
         },
         {
             "level" : 2,
             "damageRise" : 1,
-            "range" : 5,
-            "dotDamage" : 1
+            "range" : 0,
+            "dotDamage" : 0
         },
         {
             "level" : 3,
             "damageRise" : 1,
-            "range" : 5,
-            "dotDamage" : 1
+            "range" : 0,
+            "dotDamage" : 0
         },
         {
             "level" : 4,
             "damageRise" : 1,
-            "range" : 5,
-            "dotDamage" : 1
+            "range" : 0,
+            "dotDamage" : 0
         },
         {
             "level" : 5,
             "damageRise" : 1,
-            "range" : 5,
-            "dotDamage" : 1
+            "range" : 0,
+            "dotDamage" : 0
         }
     ]
     }

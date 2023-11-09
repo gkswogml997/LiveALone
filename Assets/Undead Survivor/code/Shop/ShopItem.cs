@@ -13,9 +13,13 @@ public class ShopItem : MonoBehaviour
     public float value;
     public int myLevel;
 
+    public bool isFixedPrice;
+    public int fixedPrice;
+
     public int itemId = 0;
     public Image icon;
 
+    
     bool isAct = true;
 
     Shop shop;
@@ -38,6 +42,8 @@ public class ShopItem : MonoBehaviour
     public void UpToDateInfo()
     {
         price = 50 + (10 * myLevel);
+
+        if (isFixedPrice) { price = fixedPrice; }
 
         shopItemData = GameManager.instance.jsonLoader.shopItemDataList[itemId];
         shopItemSprite = GameManager.instance.jsonLoader.shopItemSpriteList[itemId];

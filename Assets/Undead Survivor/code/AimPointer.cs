@@ -6,12 +6,12 @@ using UnityEngine;
 public class AimPointer : MonoBehaviour
 {
     public float AimSpeed = 50;
+    float resetTimer = 25;
     public Transform aimingTarget = null;
     bool manualAiming = false;
 
     Vector2 targetPosition;
     Vector2 mousePos;
-    Camera cam;
     Player player;
     Scanner scanner;
     Vector3 weaponFirePos;
@@ -19,7 +19,6 @@ public class AimPointer : MonoBehaviour
 
     private void Awake()
     {
-        cam = Camera.main;
         player = GetComponentInParent<Player>();
         scanner = player.GetComponent<Scanner>();
         lineRenderer = GetComponent<LineRenderer>();
@@ -57,9 +56,21 @@ public class AimPointer : MonoBehaviour
     
     public void SetMousePosition(Vector2 pos)
     {
-        if (pos == Vector2.zero) { mousePos = weaponFirePos; manualAiming = false; }
-        else { mousePos = pos; manualAiming = true; }
-        
-
+        if (player == null) { return; }
+        if (pos == Vector2.zero) {
+            resetTimer -= 1;
+            if (resetTimer < 0 && aimingTarget == null)
+            {
+                mousePos = weaponFirePos; 
+            }
+            manualAiming = false;
+            player.GetPlayerWeapon().isInRange = false;
+        }
+        else { 
+            mousePos = pos;
+            player.GetPlayerWeapon().isInRange = true;
+            manualAiming = true; 
+            resetTimer = 25; 
+        }
     }
 }
